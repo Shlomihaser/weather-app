@@ -1,22 +1,17 @@
-import e from "express";
+import IProcessedWeatherData from "../common-types/ProcessedWeatherData.interface";
 import { getApiUrl } from "../utils/utils";
 import axios from "axios";
 
 
-
-export const fetchWeather = async (city: string) :Promise<any> => {
+export const fetchWeather = async (city: string) :Promise<IProcessedWeatherData> => {
     
-    if(!city) throw new Error("Empty input provided");
-
     const url = getApiUrl(city);
-
     try {
         const res = await axios.get(url);
-        const data = res.data;
-
-        
-    } catch(error: unknown) {
-        if(error instanceof Error)
+        return res.data;
+    } catch(error) {
+        if(axios.isAxiosError(error))
             throw new Error(`Error fetching data from url - ${error.message}`);
+        throw new Error('An unexpected error occurred while fetching weather data');
     }
 }

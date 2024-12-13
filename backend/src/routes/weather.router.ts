@@ -4,6 +4,6 @@ import { getWeatherByCity } from '../controllers/weather.controller';
 
 const router = express.Router();
 
-router.get("/weather",getWeatherByCity);
+router.get("/",getWeatherByCity);
 
 export default router;
