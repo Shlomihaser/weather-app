@@ -1,5 +1,5 @@
-import IProcessedWeatherData from '../common-types/ProcessedWeatherData.interface';
-import IWeatherApiResponse from '../common-types/WeatherApiResponse.interface';
+import IProcessedWeatherData from '../common-types/ProcessedWeatherData.interface.ts';
+import IWeatherApiResponse from '../common-types/WeatherApiResponse.interface.ts';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -9,7 +9,7 @@ const apiKey = process.env.API_KEY;
 
 
 export const getApiUrl = (location: string) => {
-    return `${weatherUrl}${apiKey}&q=${location}&days=2&aqi=no`;
+    return `${weatherUrl}?key=${apiKey}&q=${location}&days=2&aqi=no`;
 };
 
 export const isInputValid = (str: string): boolean => {
@@ -38,7 +38,7 @@ export const processDataFromApi = (res: IWeatherApiResponse): IProcessedWeatherD
             temp_c: item.temp_c,
         };
     });
-
+    
     return {
         location: {
             name: location.name,

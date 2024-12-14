@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import weatherRouter from './routes/weather.router';
+import weatherRouter from './routes/weather.router.ts';
 
 dotenv.config();
 

@@ -1,12 +1,12 @@
 import { Request, Response} from "express";
-import { fetchWeather } from "../services/weather.service";
-import { isInputValid } from "../utils/utils";
+import { fetchWeather } from "../services/weather.service.ts";
+import { isInputValid } from "../utils/utils.ts";
 
 
 export const getWeatherByCity = async (req: Request,res: Response): Promise<void> => 
 {
     const { city } = req.query;
-
+    
     if (typeof city !== 'string' || !isInputValid(city)) {
         res.status(400).send({ success: false, message: 'Invalid city parameter' });
         return;
