@@ -1,5 +1,5 @@
-import IProcessedWeatherData from '../common-types/ProcessedWeatherData.interface.ts';
-import IWeatherApiResponse from '../common-types/WeatherApiResponse.interface.ts';
+import IProcessedWeatherData from '../common-types/ProcessedWeatherData.interface';
+import IWeatherApiResponse from '../common-types/WeatherApiResponse.interface';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -35,7 +35,7 @@ export const processDataFromApi = (res: IWeatherApiResponse): IProcessedWeatherD
         const forecastTime = new Date(item.time);
         return {
             time: forecastTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
-            temp_c: item.temp_c,
+            temp_c: Math.round(item.temp_c),
         };
     });
     
@@ -43,13 +43,13 @@ export const processDataFromApi = (res: IWeatherApiResponse): IProcessedWeatherD
         location: {
             name: location.name,
             country: location.country,
-            lat: location.lat,
-            lon: location.lon,
+            lat: parseFloat(location.lat.toFixed(2)),
+            lon: parseFloat(location.lon.toFixed(2)),
         },
         current: {
             last_updated_epoch: current.last_updated_epoch,
             last_updated: current.last_updated,
-            temp_c: current.temp_c,
+            temp_c: Math.round(current.temp_c),
             condition: {
                 text: current.condition.text,
             },

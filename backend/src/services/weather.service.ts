@@ -1,5 +1,5 @@
-import IProcessedWeatherData from "../common-types/ProcessedWeatherData.interface.ts";
-import { getApiUrl, processDataFromApi } from "../utils/utils.ts";
+import IProcessedWeatherData from "../common-types/ProcessedWeatherData.interface";
+import { getApiUrl, processDataFromApi } from "../utils/utils";
 import axios from "axios";
 
 

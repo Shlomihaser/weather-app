@@ -1,6 +1,6 @@
 import { Request, Response} from "express";
-import { fetchWeather } from "../services/weather.service.ts";
-import { isInputValid } from "../utils/utils.ts";
+import { fetchWeather } from "../services/weather.service";
+import { isInputValid } from "../utils/utils";
 
 
 export const getWeatherByCity = async (req: Request,res: Response): Promise<void> => 
