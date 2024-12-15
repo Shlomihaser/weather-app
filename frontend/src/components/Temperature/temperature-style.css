@@ -1,0 +1,33 @@
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-weather .temperature {
+    font-weight: 500;
+    letter-spacing: -12px;
+    position: relative;
+    padding-right: 25px;
+    font-size: 6rem;
+    margin-top: 20px;
+    letter-spacing: -10px;
+    line-height: calc(100% - 3rem);
+}
+
+.current-weather .temperature::before{
+    content: '';
+    background-color: var(--clr-teal-primary);
+    position: absolute;
+    border-radius: 100%;
+    right: -5px;
+    top: -25px;
+    width: 7px;
+    height: 7px;
+    outline: 7px solid white;
+}
+
+.weather-status {
+    font-size: 1.5rem;
+    font-weight: var(--fw-200);
+}

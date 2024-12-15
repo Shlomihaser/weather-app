@@ -1,0 +1,127 @@
+
+/* ============== GOOGLE FONTS ============= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Heebo:wght@100..900&display=swap');
+
+
+
+
+
+/* ============== VARIABLES ============= */
+:root {
+    /* ==== Colors ==== */
+    --clr-teal-primary: #27737D;
+    --clr-green-primary: #046B3B;
+    --clr-light-background: #DDE4E6;
+    --clr-grey-light: #F1F1F1;
+    --clr-text-grey: #707070;
+    --clr-white-muted: #A8C6CB;
+
+    /* ==== Font & Typography ==== */
+    --body-font: "Heebo", sans-serif;
+
+    --fs-xsmall: .8125rem;
+    --fs-small: .9375rem;
+    --fs-base:1rem;
+    --fs-big: 1.7rem;
+
+    --fw-100: 100;
+    --fw-200: 200;
+
+    --border-r-10: .625rem;
+    --border-r-30: 1.875rem;
+}
+
+
+
+
+
+/* ============== BASE ============= */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: var(--body-font);
+    background-color: var(--clr-grey-light);
+    padding: .6rem;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    height: max-content;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.app-container {
+    height: 100%;
+    display: grid;
+    gap: 1.5rem;
+}
+
+input,
+button{
+    outline: none;
+    border: none;
+}
+
+::-webkit-scrollbar {width: .5rem;}
+::-webkit-scrollbar-track {background-color: var(--clr-grey-light);}  
+::-webkit-scrollbar-thumb {background-color: var(--clr-text-grey);}  
+::-webkit-scrollbar-thumb:hover {background: #555;}
+
+@media (min-width: 50em) {
+    body {padding: 3rem;}
+}
+
+
+
+
+/* ============== MEDIA QUERIES  ============= */
+@media (min-width: 35em) {
+    .content-wrapper {
+        margin-left:2.1875rem;
+        gap: 3rem;
+    }
+
+    .main {
+        padding: 2rem;
+    }
+    .weather-info {
+        gap:3rem;
+        padding: 3rem 2rem 1rem 2rem;
+    }
+
+    .weather-conditions ,.hourly-forecast {
+        gap:2rem;
+    } 
+}
+
+
+@media (min-width: 65em) and (min-height: 35em) and (orientation: landscape) {
+    .app-container{
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr;
+    }
+    .logo { width: 5rem;}
+    .weather-info {width: max-content;}
+    .input-field-group {
+        width: 70%;
+    }
+}

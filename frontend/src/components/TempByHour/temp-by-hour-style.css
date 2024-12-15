@@ -1,0 +1,13 @@
+.hourly-forecast {
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    gap: .5rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.forecast-item > .forecast-time {
+    opacity: .7;
+    font-weight: 100;
+}

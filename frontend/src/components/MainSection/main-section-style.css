@@ -1,0 +1,51 @@
+
+
+
+/* ============== MAIN SECTION ============= */
+
+ .main {
+    background-color: var(--clr-white-muted);
+    border-radius: var(--border-r-10);
+    padding: 0rem;
+    display: grid;
+    place-content: center;
+    width: 100%;
+}
+
+
+
+
+.weather-info {
+    background-color: var(--clr-teal-primary);
+    border-radius: var(--border-r-30);
+    color:white;
+    width: max-content;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    padding: 2rem 1rem .5rem 1rem;
+}
+
+.current-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.current-location .city {
+    font-size: 1.2rem;
+    line-height: 15px;
+}
+
+.current-location .current-date,
+.current-location .country {
+    font-weight: 100;
+    opacity: .7;
+}
+
+
+
+

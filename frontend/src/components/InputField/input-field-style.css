@@ -1,0 +1,26 @@
+
+.input-field-group {
+    margin-top:.3125rem;
+    position: relative;
+    display: flex;
+    width: 90%;
+}
+
+.input-field-group input {
+    flex-grow: 1;
+    border-radius: var(--border-r-10);
+    padding: 1rem .5rem;
+}
+
+.check-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: var(--clr-green-primary);
+    color:#DDE4E6;
+    font-weight: var(--fw-200);
+    border-radius: var(--border-r-10);
+    padding:.3125rem 1.25rem;
+    cursor: pointer;
+}

@@ -1,0 +1,6 @@
+.location-info {
+    font-size: var(--fs-xsmall);
+    font-weight: var(--fw-200);
+    color: var(--clr-text-grey);
+    margin-top: auto;
+}   

@@ -1,0 +1,35 @@
+
+/* ============== HEADER SECTION  ============= */
+.logo {width: 4.375rem;}
+
+.header{
+    display: grid;
+    grid-auto-rows: max-content 1fr;
+    gap: 3rem;
+}
+
+@media (min-height: 60em){
+    .header{gap: 7rem;}
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left:.9375rem;
+    gap: 1.5rem;
+}
+
+.app-title h1 {
+    color: var(--clr-text-grey);
+    font-size: clamp(1.5rem, 1.4593rem + 0.2326vw, 1.75rem);
+    font-weight: var(--fw-200);
+    white-space: nowrap; 
+}
+
+.city-search .city-label{
+    color: var(--clr-text-grey);
+    font-size: var(--fs-xsmall);
+    font-weight: var(--fw-200);
+    margin-left: .7rem;    
+}
+

@@ -1,0 +1,14 @@
+.weather-conditions {
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    gap: .5rem;
+    text-align: center;
+    white-space: nowrap;
+} 
+
+.weather-condition > .detail-label {
+    opacity: .9;
+    font-weight: 100;
+    font-size: 1.1rem;
+}
