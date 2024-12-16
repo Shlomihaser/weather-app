@@ -31,7 +31,7 @@ const useWeatherStore = create<WeatherStore>((set) => ({
             else set({ error: "Data not found", isLoading: false }); 
         } catch (error) {
             if (axios.isAxiosError(error)) set({ error: error.message || "An error occurred", isLoading: false }); 
-            else set({ error: "An unexpected error occurred", isLoading: false });
+            else set({ error: "An unexpected error occurred", isLoading: false});
         }
     },
 }));

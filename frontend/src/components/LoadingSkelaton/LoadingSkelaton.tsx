@@ -12,14 +12,14 @@ function LoadingSkeleton() {
         </div>
         
         <div className="skeleton-temperature">
-          <Skeleton variant="rounded" width={150} height={150} />
+          <Skeleton variant="rounded" width={110} height={110} />
           <Skeleton variant="text" width={100} height={20}/>
         </div>
   
         <div className="weather-conditions skeleton-weather-conditions">
-          <Skeleton variant="rounded" width={70} height={40} />
-          <Skeleton variant="rounded" width={70} height={40} />
-          <Skeleton variant="rounded" width={70} height={40} />
+          <Skeleton variant="rounded" width={80} height={50} />
+          <Skeleton variant="rounded" width={80} height={50} />
+          <Skeleton variant="rounded" width={80} height={50} />
         </div>
   
         <div className="hourly-forecast skeleton-hourly-forecast">

@@ -1,9 +1,7 @@
 .skeleton-container {
     background-color: var(--clr-teal-primary);
     border-radius: var(--border-r-30);
-    padding: 2rem 1rem 0.5rem 1rem;
     width: 200px;
-    gap: 1rem;
   }
   
   .skeleton-location {
@@ -17,18 +15,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
   }
   
   .skeleton-weather-conditions {
     display: flex;
-    justify-content: space-between;
     width: 100%;
   }
   
   .skeleton-hourly-forecast {
     display: flex;
-    justify-content: space-between;
     width: 100%;
   }
   
