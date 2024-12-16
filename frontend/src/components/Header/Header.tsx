@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="header">
 
-       <a href="https://www.fintek.co.il/">
+       <a href="#">
         <img className='logo' alt="Fintek Logo" src={logo}/>
       </a>
       

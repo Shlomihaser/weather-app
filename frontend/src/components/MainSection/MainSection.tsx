@@ -1,47 +1,36 @@
 import useWeatherStore from "../../store/useWeatherStore";
-import parseDate from "../../utils/utils";
-import TempByHour from "../TempByHour/TempByHour";
-import Temperature from "../Temperature/Temperature";
-import WeatherCondition from "../WeatherCondition/WeatherCondition";
+import LoadingSkeleton from "../LoadingSkelaton/LoadingSkelaton";
+import WeatherDisplay from "../WeatherDisplay/WeatherDisplay";
 import './main-section-style.css';
 
 function MainSection() {
-  const { data } = useWeatherStore();
+  const { data, isLoading, error } = useWeatherStore();
+
+  if (isLoading) return (<LoadingSkeleton />);
 
   return (
     <main className="main">
-      {
-        data &&
-        <div className="weather-info">
-
-          <div className="current-location">
-            <p className="city">{data.location.name}</p>
-            <p className="country">{data.location.country}</p>
-            <p className="current-date">{parseDate(data.current.last_updated)}</p>
+      <div className="main-container weather-info">
+        {!data && !error && (
+          <div className="welcome-message">
+            <h1>Welcome to Weather App</h1>
+            <p>Enter a city name to get started</p>
+            {/* You can add an icon or illustration here */}
           </div>
+        )}
 
-          <Temperature temp={`${data.current.temp_c}`} status={`${data.current.condition.text}`} />
-
-          <div className="weather-conditions">
-            <WeatherCondition detailLabel="precipitation" detailValue={`${data.current.precip_mm} mm`} />
-            <WeatherCondition detailLabel="humidity" detailValue={`${data.current.humidity}%`} />
-            <WeatherCondition detailLabel="wind" detailValue={`${data.current.wind_kph} km/h`} />
+        {error && (
+          <div className="error-message">
+            <h2>Oops! Something went wrong</h2>
+            <p>{error}</p>
+            <p>Please try entering a different city name</p>
           </div>
+        )}
 
-          <div className="hourly-forecast">
-              {
-                data.forecast.map((item,index) => (
-                  <TempByHour key={index} forecastTemp={item.temp_c.toString()} forecastTime={item.time}/>
-                ))
-              }
-          </div>
-
-        </div>
-      }
-
+        {data && <WeatherDisplay data={data} />}
+      </div>
     </main>
-  )
+  );
 }
-
 
 export default MainSection;
