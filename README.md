@@ -27,7 +27,7 @@ A simple and responsive weather application that allows users to check the curre
 ![Desktop View - With Data](readme-screenshots/weather-app-desktop.png)
 
 ### Mobile View
-![Mobile View](readme-screenshots/weather-app-mobile.png)
+![Mobile View](readme-screenshots/weather-app-mobile.png){:style="display: block; margin-left: auto; margin-right: auto;"}
 
 ## Installation
 
