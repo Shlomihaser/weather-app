@@ -20,8 +20,6 @@ const useWeatherStore = create<WeatherStore>((set) => ({
     fetchData: async (city: string) => {
         set({ isLoading: true, error: null }); 
         try {
-            // Add a 2-second delay
-            await new Promise(resolve => setTimeout(resolve, 2000));
 
             const response = await axios.get<IAppApiResponse>(BASE_URL, {
                 params: { city },

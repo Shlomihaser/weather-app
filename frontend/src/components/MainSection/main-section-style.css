@@ -1,5 +1,7 @@
 
 .main {
+    flex-grow: 1;
+    flex-basis: 50%;
     background-color: var(--clr-white-muted);
     border-radius: var(--border-r-10);
     display: grid;
